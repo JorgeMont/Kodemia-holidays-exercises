@@ -18,3 +18,16 @@ output: [
     'Lebe'
 ]
 */
+
+const cutStrings = (arrOfStrings, limit) =>{
+    return arrOfStrings.map(element => element.slice(0,limit));
+}
+
+const example = [
+    'Bacon ipsum dolor amet corned',
+    'Buffalo pork ball tip',
+    'Leberkas short loin pork loin'
+];
+
+const result = cutStrings(example, 4);
+console.log(result);

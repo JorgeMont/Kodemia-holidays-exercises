@@ -4,20 +4,18 @@
 // input: 3,3,3
 // output: Es un triangulo equilatero que tiene como area 4.5
 
-const calcTriangleArea = (sideA, sideB, sideC, triangleType) => {
-    
-}
-
 const calcTriangleType = (sideA, sideB, sideC) => {
+    let triangleType;
     if(sideA === sideB && sideB === sideC ){
-        return 'Equilatero';
+        triangleType = 'Equilatero';
     } 
     else if(sideA === sideB || sideA === sideC || sideB === sideC){
-        return 'Isoceles';
+        triangleType = 'Isoceles';
     }
     else{
-        return 'Escaleno';
+        triangleType = 'Escaleno';
     }
+    return triangleType;
 
 }
 

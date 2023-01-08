@@ -94,7 +94,7 @@ const getAverageBySubject = (data) => {
       }
     });
   });
-  return arrOfSubjects.map(subject => );
+  // return arrOfSubjects.map(subject => );
 };
 
 const result = getAverageBySubject(mentorsArray);

@@ -6,18 +6,15 @@
 */
 
 const getLongest = (str1, str2) => {
-    let result;
-    if(str1.length > str2.length){
-        return str1;
+    let longest;
+    longest = str1.length > str2.length ? str1 : str2;
+    
+    if(str1.length === str2.length){
+        return `Ambos strings son del mismo tamaño`;
     }
-    else if(str2.length > str1.length){
-        return str2;
-    }
-    else{
-        result = 'Ambos son del mismo tamano';
-    }
-    return result;
+    return `El string más largo es ${longest}`;
 }
 
-const result = getLongest('hola', 'holaaaaa');
+// const result = getLongest('hola', 'holaaaaa');
+const result = getLongest('hola', 'hola');
 console.log(result);

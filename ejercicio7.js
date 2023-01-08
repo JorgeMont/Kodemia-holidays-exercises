@@ -25,3 +25,28 @@ Forma 2:
 22
 1
 */
+​
+const ascPyramid = () => {
+    let pyramid = '';
+    for(let i = 1; i<10;i++){
+        pyramid += `${i.toString().repeat(i)} \n`;
+    }
+​
+    return pyramid;
+}
+​
+const descPyramid = () => {
+    let pyramid = '';
+    for(let i = 9; i>=1;i--){
+        pyramid += `${i.toString().repeat(i)} \n`;
+    }
+​
+    return pyramid;
+}
+​
+const drawPyramid = () => {
+    let finalPyramid = `${ascPyramid()} \n${descPyramid()}`;
+    return finalPyramid;
+}
+​
+console.log(drawPyramid());

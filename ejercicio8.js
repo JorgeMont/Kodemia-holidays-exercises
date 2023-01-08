@@ -4,9 +4,6 @@ Dado una array de numeros.
 const array = [1,6,76,2,8,3,9,34,6]
 -obtener el elemento Mayor, Menor, el Promedio y la Suma de los elementos.
 
-Given the following array
-const array = [1,6,76,2,8,3,9,34,6]
-Show the biggest, smallest, average and the sum of all numbers
 */
 const array = [1,6,76,2,8,3,9,34,6];
 

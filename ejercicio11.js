@@ -84,18 +84,63 @@ const mentorsArray = [
   ];
 
 
-const getAverageBySubject = (data) => {
-  const arrOfSubjects = [];
+const getEverySignature = (data) => {
+  const arrayOfSignatures = [];
 
   data.forEach(mentorData => {
     mentorData.scores.forEach(grade => {
-      if(!arrOfSubjects.includes(grade.signature)){
-        arrOfSubjects.push(grade.signature);
+      if(!arrayOfSignatures.includes(grade.signature)){
+        arrayOfSignatures.push(grade.signature);
       }
-    });
+    })
   });
-  // return arrOfSubjects.map(subject => );
+
+  return arrayOfSignatures;
+}
+
+
+const getAverageBySubject = (data) => {
+  const arrayOfSignatures = getEverySignature(data);
+
+  //Obtener arreglo de puras materias
+  return arrayOfSignatures.map(signature => {
+    let sumOfGrades = 0;
+    let numOfGrades = 0;
+    data.forEach(mentorData => {
+      mentorData.scores.forEach(grade => {
+        if(grade.signature === signature){
+          sumOfGrades += grade.score;
+          numOfGrades++;
+        }
+      });
+    });
+    return {signature: signature, average: sumOfGrades/numOfGrades}
+  })
+
 };
 
 const result = getAverageBySubject(mentorsArray);
 console.log(result);
+
+  //   mentorData.scores.forEach(grade => {
+  //     if(!arrOfSubjects.includes(grade.signature)){
+  //       arrOfSubjects.push(grade.signature);
+  //     }
+  //   });
+  // });
+  // return arrOfSubjects.map(subject => {
+  //   let sumOfGrades = 0;
+    
+  //   data.forEach(mentorData => {
+  //     mentorData.scores.forEach(grade => {
+  //       console.log(grade);
+  //       if(grade.signature === subject){
+  //         sumOfGrades += grade.score;
+  //       }
+  //       // console.log(grade.signature);
+  //     })
+  //   })
+  //   return {subject: subject, average: sumOfGrades}
+  // });
+
+  //
